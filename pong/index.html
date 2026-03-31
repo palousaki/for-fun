@@ -81,6 +81,7 @@
       const WINNING_SCORE = 5;
 
       var showingWinScreen = false;
+      var showingStartScreen = true;
 
       function calculateMousePos(evt) {
         var rect = canvas.getBoundingClientRect();
@@ -91,6 +92,10 @@
       }
 
       function handleMouseClick(evt) {
+        if (showingStartScreen) {
+          showingStartScreen = false;
+          return;
+        }
         if (showingWinScreen) {
           player1Score = 0;
           player2Score = 0;
@@ -135,6 +140,7 @@
       }
 
       function moveEverything() {
+        if (showingStartScreen) return;
         if (showingWinScreen) return;
 
         computerMovement();
@@ -167,6 +173,21 @@
 
       function drawEverything() {
         colorRect(0, 0, canvas.width, canvas.height, '#1a1a2e');
+
+        if (showingStartScreen) {
+          canvasContext.fillStyle = '#fff';
+          canvasContext.font = 'bold 56px sans-serif';
+          canvasContext.textAlign = 'center';
+          canvasContext.fillText('PONG', canvas.width / 2, canvas.height / 2 - 60);
+          canvasContext.font = '20px sans-serif';
+          canvasContext.fillStyle = '#aaa';
+          canvasContext.fillText('Move your mouse to control the left paddle', canvas.width / 2, canvas.height / 2);
+          canvasContext.fillText('First to 5 wins', canvas.width / 2, canvas.height / 2 + 30);
+          canvasContext.fillStyle = '#e2a96b';
+          canvasContext.font = 'bold 22px sans-serif';
+          canvasContext.fillText('Click to start', canvas.width / 2, canvas.height / 2 + 80);
+          return;
+        }
 
         canvasContext.setLineDash([10, 10]);
         canvasContext.strokeStyle = '#333';
