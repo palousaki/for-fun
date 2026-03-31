@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Fun – Mini Games</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #faf7f4;
+        color: #2c2416;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 3rem 1.5rem;
+        gap: 2.5rem;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #2c2416;
+      }
+
+      header p {
+        margin-top: 0.5rem;
+        color: #7c6f62;
+        font-size: 0.95rem;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        width: 100%;
+        max-width: 700px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        background: #fff;
+        border: 1px solid #e8ddd4;
+        border-radius: 10px;
+        padding: 2rem 1rem;
+        text-decoration: none;
+        color: #2c2416;
+        transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: #c2692a;
+        box-shadow: 0 6px 20px rgba(194, 105, 42, 0.12);
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+      }
+
+      .card h2 {
+        font-size: 1.1rem;
+        color: #c2692a;
+      }
+
+      .card p {
+        font-size: 0.82rem;
+        color: #7c6f62;
+        text-align: center;
+      }
+
+      .back {
+        font-size: 0.85rem;
+        color: #7c6f62;
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .back:hover {
+        color: #2c2416;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>For Fun</h1>
+      <p>A small collection of browser mini games.</p>
+    </header>
+
+    <div class="cards">
+      <a class="card" href="pong/">
+        <div class="card-icon">🏓</div>
+        <h2>Pong</h2>
+        <p>Classic paddle game vs the computer.</p>
+      </a>
+      <a class="card" href="snake/">
+        <div class="card-icon">🐍</div>
+        <h2>Snake</h2>
+        <p>Eat, grow, don't crash.</p>
+      </a>
+    </div>
+
+    <a class="back" href="https://palousaki.github.io">← Back to profile</a>
+  </body>
+</html>
